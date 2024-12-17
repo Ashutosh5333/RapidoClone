@@ -19,7 +19,7 @@ const Auth = () => {
   const [phone, setPhone] = useState("");
 
   const handleNext = () => {
-    resetAndNavigate('/customer/home');
+    resetAndNavigate("/customer/home");
   };
 
   return (
@@ -41,7 +41,7 @@ const Auth = () => {
         {/* =========== */}
 
         <CustomText fontFamily="Medium" variant="h7">
-       Good to see You Captain!
+          Good to see You Captain!
         </CustomText>
 
         <CustomText

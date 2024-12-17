@@ -3,6 +3,7 @@ import React from "react";
 import { roleStyles } from "@/styles/roleStyles";
 import CustomText from "@/components/shared/CustomText";
 import { router } from "expo-router";
+import { ScrollView } from "react-native-gesture-handler";
 
 const Role = () => {
   const handleCustmerPress = () => {
@@ -14,6 +15,7 @@ const Role = () => {
   };
 
   return (
+    <ScrollView>
     <View style={roleStyles.container}>
       <Image
         source={require("@/assets/images/logo_t.png")}
@@ -51,6 +53,7 @@ const Role = () => {
         </View>
       </TouchableOpacity>
     </View>
+    </ScrollView>
   );
 };
 
