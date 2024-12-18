@@ -6,7 +6,8 @@ import { Platform } from "react-native";
 //  export const Socket_URL = Platform.OS ==="android"?
 //  'ws://localhost:8000': 'ws://10:0.2.2:8000'
 
-const LOCAL_IPV4 = "192.168.1.25";
+// const LOCAL_IPV4 = "192.168.1.25";
+export const LOCAL_IPV4 = "127.0.0.1";
 
 export const Base_URL =
   Platform.OS === "web"

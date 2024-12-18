@@ -4,6 +4,7 @@ import {
   SafeAreaView,
   Image,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import React, { useState } from "react";
 import { ScrollView } from "react-native-gesture-handler";
@@ -14,12 +15,26 @@ import { commonStyles } from "@/styles/commonStyles";
 import PhoneInput from "@/components/shared/PhoneInput";
 import CustomButton from "@/components/shared/CustomButton";
 import { resetAndNavigate } from "@/utils/Helpers";
+import { signin } from "@/service/authservice";
 
 const Auth = () => {
   const [phone, setPhone] = useState("");
 
   const handleNext = () => {
-    resetAndNavigate("/customer/home");
+    console.log("custmer function");
+
+    if (!phone) {
+      Alert.alert("Bro enter your phone number");
+      return;
+    }
+    if (!phone && phone.length !== 10) {
+      Alert.alert("Complete your phone number");
+      return;
+    }
+
+    signin({ role: "customer", phone });
+
+    // resetAndNavigate("/customer/home");
   };
 
   return (
@@ -27,7 +42,8 @@ const Auth = () => {
       <ScrollView contentContainerStyle={authStyles.container}>
         <View style={commonStyles.flexRowBetween}>
           <Image
-            source={require("@/assets/images/captain_logo.png")}
+            // source={require("@/assets/images/captain_logo.png")}
+            source={require("@/assets/images/logo_t.png")}
             style={authStyles.logo}
           />
           <TouchableOpacity style={authStyles.flexRowGap}>
@@ -41,7 +57,7 @@ const Auth = () => {
         {/* =========== */}
 
         <CustomText fontFamily="Medium" variant="h7">
-          Good to see You Captain!
+          What's your number ?
         </CustomText>
 
         <CustomText

@@ -19,7 +19,7 @@ const Auth = () => {
   const [phone, setPhone] = useState("");
 
   const handleNext = () => {
-    resetAndNavigate('/captain/home');
+    resetAndNavigate("/captain/home");
   };
 
   return (
@@ -27,7 +27,8 @@ const Auth = () => {
       <ScrollView contentContainerStyle={authStyles.container}>
         <View style={commonStyles.flexRowBetween}>
           <Image
-            source={require("@/assets/images/logo_t.png")}
+            // source={require("@/assets/images/logo_t.png")}
+            source={require("@/assets/images/captain_logo.png")}
             style={authStyles.logo}
           />
           <TouchableOpacity style={authStyles.flexRowGap}>
@@ -41,7 +42,7 @@ const Auth = () => {
         {/* =========== */}
 
         <CustomText fontFamily="Medium" variant="h7">
-          What's your number ?
+          Good to see You Captain!
         </CustomText>
 
         <CustomText

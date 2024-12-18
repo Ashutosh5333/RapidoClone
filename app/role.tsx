@@ -4,14 +4,15 @@ import { roleStyles } from "@/styles/roleStyles";
 import CustomText from "@/components/shared/CustomText";
 import { router } from "expo-router";
 import { ScrollView } from "react-native-gesture-handler";
+import { resetAndNavigate } from "@/utils/Helpers";
 
 const Role = () => {
   const handleCustmerPress = () => {
-    router.navigate("/customer/auth");
+    resetAndNavigate("/customer/auth");
   };
 
   const handleCaptianPress = () => {
-    router.navigate("/captain/auth");
+    resetAndNavigate("/captain/auth");
   };
 
   return (
@@ -46,7 +47,7 @@ const Role = () => {
           style={roleStyles.image}
         />
         <View style={roleStyles.cardContent}>
-          <CustomText style={roleStyles.title}>Custmer</CustomText>
+          <CustomText style={roleStyles.title}>Captain</CustomText>
           <CustomText>
             Are you a Captain ? Order rides and deliveries easily .
           </CustomText>
